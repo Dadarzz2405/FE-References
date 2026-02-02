@@ -2,95 +2,118 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
+/* GDA School House System - Design System
+   Colors extracted from Global Darussalam Academy logo:
+   - Primary Navy Blue: #1a3252 (hsl 214 51% 21%)
+   - Accent Gold: #d4a84b (hsl 41 60% 56%)
 */
+
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap');
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    /* GDA Navy Blue & Gold Theme */
+    --background: 220 20% 97%;
+    --foreground: 214 51% 15%;
 
     --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card-foreground: 214 51% 15%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover-foreground: 214 51% 15%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    /* Primary - Navy Blue from GDA logo */
+    --primary: 214 51% 21%;
+    --primary-foreground: 0 0% 100%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    /* Secondary - Light Navy */
+    --secondary: 214 30% 90%;
+    --secondary-foreground: 214 51% 21%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    /* Accent - Gold from GDA logo */
+    --accent: 41 60% 56%;
+    --accent-foreground: 214 51% 15%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    --muted: 220 14% 96%;
+    --muted-foreground: 214 20% 45%;
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    --border: 214 20% 88%;
+    --input: 214 20% 88%;
+    --ring: 41 60% 56%;
 
-    --radius: 0.5rem;
+    --radius: 0.75rem;
 
-    --sidebar-background: 0 0% 98%;
+    /* Custom tokens for GDA */
+    --gda-navy: 214 51% 21%;
+    --gda-navy-dark: 214 51% 12%;
+    --gda-navy-light: 214 40% 35%;
+    --gda-gold: 41 60% 56%;
+    --gda-gold-light: 41 70% 72%;
+    --gda-gold-dark: 41 55% 42%;
 
-    --sidebar-foreground: 240 5.3% 26.1%;
+    /* Gradients */
+    --gradient-navy: linear-gradient(135deg, hsl(214 51% 21%) 0%, hsl(214 51% 12%) 100%);
+    --gradient-gold: linear-gradient(135deg, hsl(41 60% 56%) 0%, hsl(41 55% 42%) 100%);
+    --gradient-hero: linear-gradient(180deg, hsl(214 51% 12%) 0%, hsl(214 51% 21%) 50%, hsl(214 40% 25%) 100%);
 
-    --sidebar-primary: 240 5.9% 10%;
+    /* Shadows */
+    --shadow-sm: 0 1px 2px 0 hsl(214 51% 21% / 0.05);
+    --shadow-md: 0 4px 6px -1px hsl(214 51% 21% / 0.1), 0 2px 4px -2px hsl(214 51% 21% / 0.1);
+    --shadow-lg: 0 10px 15px -3px hsl(214 51% 21% / 0.1), 0 4px 6px -4px hsl(214 51% 21% / 0.1);
+    --shadow-gold: 0 4px 20px -2px hsl(41 60% 56% / 0.4);
+    --shadow-navy: 0 4px 20px -2px hsl(214 51% 21% / 0.4);
 
-    --sidebar-primary-foreground: 0 0% 98%;
-
-    --sidebar-accent: 240 4.8% 95.9%;
-
-    --sidebar-accent-foreground: 240 5.9% 10%;
-
-    --sidebar-border: 220 13% 91%;
-
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    /* Sidebar */
+    --sidebar-background: 214 51% 12%;
+    --sidebar-foreground: 0 0% 100%;
+    --sidebar-primary: 41 60% 56%;
+    --sidebar-primary-foreground: 214 51% 15%;
+    --sidebar-accent: 214 40% 25%;
+    --sidebar-accent-foreground: 0 0% 100%;
+    --sidebar-border: 214 40% 20%;
+    --sidebar-ring: 41 60% 56%;
   }
 
   .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
+    --background: 214 51% 8%;
+    --foreground: 0 0% 98%;
 
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
+    --card: 214 51% 12%;
+    --card-foreground: 0 0% 98%;
 
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
+    --popover: 214 51% 12%;
+    --popover-foreground: 0 0% 98%;
 
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
+    --primary: 41 60% 56%;
+    --primary-foreground: 214 51% 12%;
 
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
+    --secondary: 214 40% 20%;
+    --secondary-foreground: 0 0% 98%;
 
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
+    --accent: 41 60% 56%;
+    --accent-foreground: 214 51% 12%;
 
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
+    --muted: 214 40% 18%;
+    --muted-foreground: 214 20% 65%;
 
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive: 0 62% 30%;
+    --destructive-foreground: 0 0% 98%;
 
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --border: 214 40% 20%;
+    --input: 214 40% 20%;
+    --ring: 41 60% 56%;
+
+    --sidebar-background: 214 51% 8%;
+    --sidebar-foreground: 0 0% 98%;
+    --sidebar-primary: 41 60% 56%;
+    --sidebar-primary-foreground: 214 51% 8%;
+    --sidebar-accent: 214 40% 15%;
+    --sidebar-accent-foreground: 0 0% 98%;
+    --sidebar-border: 214 40% 15%;
+    --sidebar-ring: 41 60% 56%;
   }
 }
 
@@ -101,5 +124,141 @@ All colors MUST be HSL.
 
   body {
     @apply bg-background text-foreground;
+    font-family: 'Inter', sans-serif;
   }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Cinzel', serif;
+    @apply font-semibold tracking-wide;
+  }
+}
+
+@layer components {
+  /* Hero Title Styling */
+  .hero-title {
+    font-family: 'Cinzel', serif;
+    @apply text-5xl md:text-7xl font-bold tracking-widest;
+    text-shadow: 0 4px 20px hsl(var(--gda-navy) / 0.5);
+  }
+
+  .hero-subtitle {
+    font-family: 'Cinzel', serif;
+    @apply text-2xl md:text-4xl font-medium tracking-[0.3em];
+  }
+
+  /* Glass Card Effect */
+  .glass-card {
+    @apply bg-card/80 backdrop-blur-md border border-border/50 rounded-xl shadow-lg;
+  }
+
+  /* Gold Gradient Text */
+  .text-gold-gradient {
+    background: linear-gradient(135deg, hsl(var(--gda-gold-light)) 0%, hsl(var(--gda-gold)) 50%, hsl(var(--gda-gold-dark)) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  /* Navy Background with starry effect */
+  .bg-navy-stars {
+    background: var(--gradient-hero);
+    position: relative;
+  }
+
+  .bg-navy-stars::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: 
+      radial-gradient(2px 2px at 20px 30px, hsl(var(--gda-gold-light) / 0.3), transparent),
+      radial-gradient(2px 2px at 40px 70px, hsl(var(--gda-gold-light) / 0.2), transparent),
+      radial-gradient(1px 1px at 90px 40px, hsl(var(--gda-gold-light) / 0.4), transparent),
+      radial-gradient(2px 2px at 130px 80px, hsl(var(--gda-gold-light) / 0.2), transparent),
+      radial-gradient(1px 1px at 160px 120px, hsl(var(--gda-gold-light) / 0.3), transparent);
+    background-repeat: repeat;
+    background-size: 200px 150px;
+    pointer-events: none;
+  }
+
+  /* Hover card lift effect */
+  .hover-lift {
+    @apply transition-all duration-300 ease-out;
+  }
+
+  .hover-lift:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: var(--shadow-gold);
+  }
+
+  /* Table styling */
+  .gda-table {
+    @apply w-full border-collapse overflow-hidden rounded-xl;
+  }
+
+  .gda-table thead {
+    @apply bg-primary text-primary-foreground;
+  }
+
+  .gda-table th {
+    @apply px-6 py-4 text-left font-semibold uppercase tracking-wider text-sm;
+  }
+
+  .gda-table tbody tr {
+    @apply border-b border-border transition-colors;
+  }
+
+  .gda-table tbody tr:hover {
+    @apply bg-secondary/50;
+  }
+
+  .gda-table td {
+    @apply px-6 py-4;
+  }
+
+  /* Animated underline */
+  .animated-underline {
+    @apply relative;
+  }
+
+  .animated-underline::after {
+    content: '';
+    @apply absolute bottom-0 left-0 w-0 h-0.5 bg-accent transition-all duration-300;
+  }
+
+  .animated-underline:hover::after {
+    @apply w-full;
+  }
+}
+
+/* Custom animations */
+@keyframes float {
+  0%, 100% { transform: translateY(0px) rotate(var(--rotate, 0deg)); }
+  50% { transform: translateY(-10px) rotate(var(--rotate, 0deg)); }
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% center; }
+  100% { background-position: 200% center; }
+}
+
+@keyframes glow {
+  0%, 100% { box-shadow: 0 0 20px hsl(var(--gda-gold) / 0.3); }
+  50% { box-shadow: 0 0 40px hsl(var(--gda-gold) / 0.6); }
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+.animate-shimmer {
+  background: linear-gradient(90deg, transparent, hsl(var(--gda-gold) / 0.3), transparent);
+  background-size: 200% 100%;
+  animation: shimmer 2s infinite;
+}
+
+.animate-glow {
+  animation: glow 2s ease-in-out infinite;
 }
